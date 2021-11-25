@@ -56,7 +56,7 @@ function keyPressed() {
   }
 }
 
-//function to show the ball
+//función para mostrar la bala
 function showCannonBalls(ball, index) {
   ball.display();
   if (ball.body.position.x >= width || ball.body.position.y >= height - 50) {
