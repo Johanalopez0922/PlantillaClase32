@@ -7,13 +7,12 @@ var canvas, angle, tower, ground, cannon;
 var balls = [];
 var boats = [];
 
-function preload() {
+function preload(){
   backgroundImg = loadImage("./assets/background.gif");
-  towerImage = loadImage("./assets/tower.png");
-  
+  towerImage = loadImage("./assets/tower.png");  
 }
 
-function setup() {
+function setup(){
   canvas = createCanvas(1200,600);
   engine = Engine.create();
   world = engine.world;
@@ -21,22 +20,16 @@ function setup() {
   ground = new Ground(0, height - 1, width * 2, 1);
   tower = new Tower(150, 350, 160, 310);
   cannon = new Cannon(180, 110, 100, 50, angle);
-
-  
-
-  
-}
+  }
 
 function draw() {
   showBoats()
   background(189);
   image(backgroundImg, 0, 0, width, height);
 
- 
-
   Engine.update(engine);
   ground.display();
-showBoats();
+  showBoats();
  
 
   for (var i = 0; i < balls.length; i++) {
@@ -45,8 +38,6 @@ showBoats();
 
   cannon.display();
   tower.display();
-
-  
 }
 
 function keyPressed() {
